@@ -1,15 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
-@app.route('/home')
+@app.route('/')
 def home():
-    return "hello world"
+    return render_template("home.html")
 
-@app.route('/successful')
-def success():
-    return "<h1>CONGRATULATIONS BUDDY, YOU'RE IN!</h1>"
-
-if __name__ == '__main__':
-    app.run()
+if __name__== "__main__":
+	app.run(debug=False)
